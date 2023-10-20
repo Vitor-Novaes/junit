@@ -1,0 +1,14 @@
+plugins {
+  id 'java'
+  id 'jacoco'
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+jacocoTestReport {
+  reports {
+    xml.enabled true
+    html.enabled true
+  }
+}
