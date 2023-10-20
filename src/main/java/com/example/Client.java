@@ -1,6 +1,6 @@
-package src.main.resources;
+package com.example;
+
 import java.util.*;
-import java.util.Scanner;
 
 public class Client {
     private final Scanner scanner;
@@ -29,7 +29,7 @@ public class Client {
             } else if (choice >= 1 && choice <= 3) {
                 recordShiftChoice(choice);
             } else {
-                System.out.println("Invalid choice. Please select a valid option (1-4).");
+                System.out.println(handleInvalidChoice(choice));
             }
         }
 
@@ -71,6 +71,10 @@ public class Client {
             List<String> patients = entry.getValue();
             System.out.println(shiftName + ": " + patients);
         }
+    }
+
+    public static String handleInvalidChoice(int choice) {
+        return "Invalid choice. Please select a valid option (1-4).";
     }
 
     public static String getShiftName(int choice) {
